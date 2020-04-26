@@ -29,6 +29,7 @@ margin-right: 7px;
 const TitleBar= styled.div`
 display: flex;
 align-items: center;
+margin:10px;
 `;
 
 const CoverImage = styled.img`
@@ -44,25 +45,38 @@ border: 1px solid slategrey;
 margin:20px;
 padding:20px;
 `;
-const SupportingText = styled.div`
+const SupportingTextBox = styled.div`
 width:100%;
 padding:10px;
+background:ghostwhite;
 `
+const Button = styled.button`
+width: max-content;
+background: slategrey;
+color: white;
+margin: 20px;
+font-size: 1rem;
+` 
 
-export const Card = ({title, secondaryText, thumbnailurl, coverImage, children, className, supportingText}) => {
+
+export const Card = ({title, secondaryText, thumbnailurl, coverImage, children, className, supportingText, buttonText}) => {
 return(
 
     <Container className= {className}>
         <TitleBar>
-               {thumbnailurl && <Thumbnail url={thumbnailurl}/> } 
-                <div>
-                    {title && <Title>{title}</Title> }
-                    {secondaryText &&  <SecondaryText>{secondaryText}</SecondaryText>}
-                </div>
-            </TitleBar>
-         {coverImage && <CoverImage src={coverImage}/>}
-         {supportingText && <SupportingText/>}
+            {thumbnailurl && <Thumbnail url={thumbnailurl}/> } 
+            <div>
+                {title && <Title>{title}</Title> }
+                {secondaryText &&  <SecondaryText>{secondaryText}</SecondaryText>}
+            </div>
+        </TitleBar>
 
+         {coverImage && <CoverImage src={coverImage}/>}
+
+        {supportingText && <SupportingTextBox>{supportingText}</SupportingTextBox>}
+        
+       {buttonText && <Button>{buttonText}</Button> }
+        
         <Content>
             {children && <ChildrenContent>{children}</ChildrenContent>}
         </Content>

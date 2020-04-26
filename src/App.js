@@ -16,6 +16,7 @@ export const App = () => {
      title="Title Goes Here" 
      secondaryText="Secondary Text goes here.."
      supportingText="Supporting text goes here!"
+     buttonText="BUTTON⭐️"
       />
     <ThinnerCard title="Another Title" secondaryText="Secondary again"/>
     <Card>
